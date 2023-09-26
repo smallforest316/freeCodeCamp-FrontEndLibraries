@@ -1,0 +1,117 @@
+$bodyBackground: #d5bfff;
+$timerBackground: #b9f;
+$borderColor: #5f39a9;
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    text-align: center;
+
+    #root {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        background: $bodyBackground;
+
+        #clock {
+            width: 600px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+
+            .settings {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+
+                .break {
+                    margin-right: 40px;
+                }
+
+                #break-label,
+                #session-label {
+                    padding: 5px;
+                    font-size: 26px;
+                    font-weight: 900;
+                }
+
+                .controller {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-around;
+
+                    #break-increment,
+                    #break-decrement,
+                    #session-increment,
+                    #session-decrement {
+                        cursor: pointer;
+                    }
+                }
+
+                #break-length,
+                #session-length {
+                    font-size: 22px;
+                    font-weight: bold;
+                }
+
+                @media (max-width: 500px) {
+                    align-items: center;
+                    flex-direction: column;
+
+                    .break {
+                        margin-right: 0;
+                    }
+
+                    .session {
+                        margin-top: 15px;
+                    }
+                }
+            }
+
+            .timer {
+                width: 310px;
+                height: 200px;
+                display: flex;
+                border: 3px solid $borderColor;
+                margin-top: 20px;
+                background: $timerBackground;
+                border-radius: 40px;
+                flex-direction: column;
+                justify-content: space-around;
+
+                #timer-label {
+                    font-size: 30px;
+                    font-weight: bold;
+                }
+
+                #time-left {
+                    font-size: 50px;
+                    font-weight: 900;
+                }
+
+                #reset,
+                #start_stop {
+                    cursor: pointer;
+                    border: none;
+                    outline: none;
+                    background: none;
+
+                    &:hover {
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}
